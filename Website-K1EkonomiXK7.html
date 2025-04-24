@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lembaga Keuangan Bank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #333333;
+      --accent: #00e5ff;
+      --highlight: #ff4081;
+      --text: #eeeeee;
+      --light: #ffffff;
+    }body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: var(--secondary);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  animation: slideInLeft 2s ease-out;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--highlight);
+}
+
+section {
+  padding: 80px 10% 60px;
+  position: relative;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h2 {
+  color: var(--highlight);
+  margin-bottom: 30px;
+  border-left: 4px solid var(--highlight);
+  padding-left: 15px;
+}
+
+.card-custom {
+  background: var(--secondary);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+canvas {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+footer {
+  background: var(--secondary);
+  padding: 30px;
+  text-align: center;
+  color: #ccc;
+  margin-top: 40px;
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--highlight);
+  color: var(--light);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--highlight);
+  display: none;
+  z-index: 1000;
+}
+
+#topBtn:hover {
+  background: var(--accent);
+  box-shadow: 0 0 20px var(--highlight);
+}
+
+  </style>
+</head><body>
+  <header>
+    <h1>Lembaga Keuangan Bank</h1>
+    
+    <nav>
+      <a href="#sejarah">Sejarah</a>
+      <a href="#jenis">Jenis</a>
+      <a href="#fungsi">Fungsi</a>
+      <a href="#peran">Peran</a>
+      <a href="#contoh">Contoh</a>
+      <a href="#grafik">Grafik</a>
+    </nav>
+  </header>  <section id="sejarah">
+    <h2>Sejarah Lembaga Keuangan Bank</h2>
+    <div class="card-custom">
+      <p>Sejarah lembaga keuangan bank bermula sejak zaman kuno ketika manusia mulai menyimpan harta dan melakukan pinjam meminjam. Bank modern mulai berkembang di Italia pada abad ke-14, dan sistem perbankan berkembang pesat sejak Revolusi Industri hingga era digital saat ini.</p>
+    </div>
+  </section>  <section id="jenis">
+    <h2>Jenis-Jenis Bank</h2>
+    <div class="card-custom">
+      <ul>
+        <li><strong>Bank Sentral</strong>: Mengatur kebijakan moneter dan stabilitas sistem keuangan.</li>
+        <li><strong>Bank Umum</strong>: Menyediakan layanan keuangan umum seperti simpanan dan pinjaman.</li>
+        <li><strong>Bank Perkreditan Rakyat (BPR)</strong>: Fokus pada masyarakat kecil dan UMKM.</li>
+        <li><strong>Bank Syariah</strong>: Beroperasi berdasarkan prinsip syariah Islam.</li>
+      </ul>
+    </div>
+  </section>  <section id="fungsi">
+    <h2>Fungsi dan Tugas Bank</h2>
+    <div class="card-custom">
+      <ol>
+        <li>Menghimpun dana masyarakat melalui tabungan, giro, dan deposito.</li>
+        <li>Menyalurkan dana dalam bentuk kredit.</li>
+        <li>Memberikan jasa pembayaran dan lalu lintas keuangan.</li>
+        <li>Mengatur kestabilan ekonomi nasional.</li>
+        <li>Menyediakan akses pembiayaan kepada pelaku usaha.</li>
+      </ol>
+    </div>
+  </section>  <section id="peran">
+    <h2>Peran Bank dalam Perekonomian</h2>
+    <div class="card-custom">
+      <p>Bank berperan sebagai perantara keuangan antara masyarakat yang memiliki dana dan yang membutuhkan dana. Selain itu, bank membantu kelancaran transaksi ekonomi, menjaga kestabilan moneter, dan mendorong pertumbuhan ekonomi melalui pembiayaan sektor riil.</p>
+    </div>
+  </section>  <section id="contoh">
+    <h2>Contoh Lembaga Keuangan Bank di Indonesia</h2>
+    <div class="card-custom">
+      <ul>
+        <li><strong>Bank Indonesia</strong> (Bank Sentral)</li>
+        <li><strong>Bank Mandiri, BCA, BRI, BNI</strong> (Bank Umum)</li>
+        <li><strong>BSI</strong> (Bank Syariah)</li>
+        <li><strong>BPR Arta Utama</strong> (BPR)</li>
+      </ul>
+    </div>
+  </section>  <section id="grafik">
+    <h2>Grafik Distribusi Jenis Bank</h2>
+    <div class="card-custom">
+      <canvas id="bankChart" height="200"></canvas>
+    </div>
+  </section><button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <footer>
+    <p>&copy;  K1EkonomiXK7</p>
+  </footer>  <script>
+    AOS.init();
+
+    const ctx = document.getElementById('bankChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Bank Umum', 'Bank Syariah', 'BPR', 'Bank Sentral'],
+        datasets: [{
+          label: 'Jumlah Bank di Indonesia',
+          data: [120, 45, 60, 1],
+          backgroundColor: [
+            '#00adb5',
+            '#007777',
+            '#5588aa',
+            '#393e46'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    window.onscroll = () => {
+      document.getElementById("topBtn").style.display = window.scrollY > 300 ? 'block' : 'none';
+    };
+  </script></body></html>
